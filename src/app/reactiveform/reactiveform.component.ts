@@ -37,6 +37,7 @@ export class ReactiveformComponent implements OnInit {
   }
 
   addUser() {
-    //alert('user is added', this.myForm.value);
+    console.log('this.myForm.value=', this.myForm.value);
+    alert('user is added: ' + this.myForm.value);
   }
 }

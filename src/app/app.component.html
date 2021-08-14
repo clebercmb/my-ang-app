@@ -8,3 +8,17 @@
 <!--app-mainapp></app-mainapp-->
 <app-reactiveform></app-reactiveform>
 
+
+
+<ul>
+  <li>Name:{{userdata.uname | uppercase}}</li>
+  <li>Income:{{userdata.income | number}}</li>
+  <li>Income:{{userdata.income | currency: 'GBP'}}</li>
+  <li>Rating:{{userdata.rating}}</li>
+  <li>Rating:{{userdata.rating | number:'3.2-2'}}</li>
+  <li>DOJ:{{userdata.DOJ | date}}</li>
+  <li>userdata:{{userdata}}</li>
+  <li>userdata:{{userdata | json}}</li>
+  <li>details:{{userdata.details | summary}}</li>
+
+</ul>

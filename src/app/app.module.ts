@@ -7,9 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserData } from './shared/userdata.service';
 import { DeptData } from './shared/department.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
-import {} from './reactiveform/reactiveform.component';
+import { Summary } from './summary.pipe';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,9 @@ import {} from './reactiveform/reactiveform.component';
     HeaderComponent,
     FooterComponent,
     ReactiveformComponent,
+    Summary,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveformComponent],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [UserData, DeptData],
   bootstrap: [AppComponent],
 })
