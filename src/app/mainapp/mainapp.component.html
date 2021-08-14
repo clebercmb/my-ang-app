@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<p>mainapp works!</p>
+
+
+<label>***Users***</label>
+<div *ngIf='userData.length > 0; then show else noShow'></div>
+<ng-template #show>
+  <ul>
+    <li *ngFor='let ud of userData'>
+      **{{ud}}**
+    </li>
+  </ul>
+</ng-template>
+<ng-template #noShow>Data not found</ng-template>
+
+
+<label>***Departments***</label>
+
+<div *ngIf='deptData.length > 0; then showDept else noShowDept'></div>
+<ng-template #showDept>
+  <ul>
+    <li *ngFor='let dp of deptData'>
+      {{dp}}
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noShowDept>Data not found</ng-template>
+
+
+<app-footer [isActive]='false' ></app-footer>

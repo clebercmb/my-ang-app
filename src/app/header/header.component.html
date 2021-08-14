@@ -1,0 +1,49 @@
+<p>header works!</p>
+
+<div [hidden]='shoppingCart.length == 0'>Data found</div>
+<div [hidden]='shoppingCart.length > 0'>Data not found</div>
+
+<div *ngIf='shoppingCart.length > 0'>Data found</div>
+<div *ngIf='shoppingCart.length == 0'>Data not found</div>
+
+<div *ngIf='shoppingCart.length > 0; then show else noShow'></div>
+<ng-template #show>Data found</ng-template>
+<ng-template #noShow>Data not found</ng-template>
+
+<br/>
+<br/>
+<br/>
+
+<form (ngSubmit)="addUser(data)"  #data=ngForm>
+  Name:<input type='text' name='uname' ngModel required #uname=ngModel/>
+  <div *ngIf='uname.invalid'>Name cant be blank</div>
+  <br/>
+
+  Email:<input type='text' name='uemail' ngModel email required #uemail=ngModel/>
+  <div *ngIf='uemail.invalid'>
+    <div *ngIf='uemail.errors.required'>Email cant be blank</div>
+    <div *ngIf='uemail.errors.email'>Type correct email</div>
+  </div>
+
+  <br/>
+
+  City:<input type='text' name='city' minlength="5" ngModel required #city=ngModel/>
+  <div *ngIf='city.invalid'>
+    <div *ngIf='city.errors.required'>City cant be blank</div>
+    <div *ngIf='city.errors?.minlength'>City must be at least 5 characters long</div>
+
+
+  </div>
+
+  <br/>
+
+  Password:<input type='text' name='password' ngModel/>
+  <br/>
+
+  <button  [disabled]='data.invalid'>Register</button>
+
+</form>
+
+<br/>
+<br/>
+<br/>

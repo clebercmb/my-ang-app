@@ -1,0 +1,26 @@
+<p>footer works!</p>
+
+
+
+City: <input type='text' [value]= 'myCity'/>
+
+City: <input type='text' [(ngModel)]= 'myCity' class='form-control'/>
+
+<br/>
+{{myCity}}
+
+
+MyFav: <img [src]='myFav'/>
+
+<button (click)="addUser()" class='btn btn-success'>add</button>
+<button (click)="addUser()" class='btn btn-success' [class.active]='isActive'>add</button>
+
+<br/>
+
+<input type='text' [(ngModel)]='myImg' class='form-control'/>
+<img [src]='myImg'/>
+
+<br/>
+<br/>
+<br/>
+Hello: {{isActive}}
